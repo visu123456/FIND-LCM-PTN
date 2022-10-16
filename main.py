@@ -1,5 +1,14 @@
 # Python Program to find the L.C.M. of two input number
+import requests
+from bs4 import BeautifulSoup
+def get_data():
 
+  
+	URL = "http://www.values.com/inspirational-quotes"
+	r = requests.get(URL)
+
+	soup = BeautifulSoup(r.content, 'html5lib') # If this line causes an error, run 'pip install html5lib' or install html5lib
+	print(soup.prettify())
 def compute_lcm(x, y):
 
    # choose the greater number
